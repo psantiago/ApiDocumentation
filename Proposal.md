@@ -65,7 +65,7 @@ This corresponds to **Read** in **CRUD**. As listed in the expected characterist
 ######**Default Action**######
 By default, **GET** should return all the valid resources (e.g. /users GET will return all users).
 
-######**TODO - Default Action**######
+######**TODO Default Action**######
 Our general thoughts were that for "smart" clients, knowledgeable about the api system and not bad actors, returning all the things is reasonable and the "correct" result RESTfully speaking.
 
 However, if we're thinking the API won't just be consumed internally, we probably want to limit the default response to something like the first page of results.
@@ -104,7 +104,7 @@ PATCH /users/123
 In general, we're going to try to follow [RFC6902][rfc6902] for patching, with the caveat that we only generally support one level down of patching a resource (e.g. **/Users/123/Email** and not **/Users/123/Addresses/1/Zipcode**) - any further down should be handled somewhere else if reasonable.
 See [William Durand's post for more details][william-durand].
 
-######**TODO - op semantics**######
+######**TODO op semantics**######
 As per the [above link][william-durand] and [RFC6902 Section 4][rfc6902-4],
 there are a limited set of "valid" operations. If we wanted, we could probably just allow our own operations (such as "reindex"), which would obviate issues of [Routing Functions/Actions](#routing-functionsactions).
 
