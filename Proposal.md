@@ -10,6 +10,7 @@ Table Of Contents
 					1. [TODO - default action](#todo-default-action)
 				2. [Paging](#paging)
 				3. [Queries](#queries)
+				4. [Limited Columns](#limited-columns)
 			2. [POST](#post)
 			3. [PUT](#put)
 			4. [DELETE](#delete)
@@ -51,6 +52,13 @@ Documentation
 
 We should create fairly thorough documentation for each resource and HTTP Verb combination used. We should include the potential success status code(s), potential error status code(s), and examples of request and response bodies. As a group, we briefly discussed potentially using [RAML][raml], but not of us have done thorough research on it yet. I think there's a potential that using RAML would allow us to generate both the API Client and documentation URLs automatically - see [RAML Tools for .NET][raml-dotnet-tools].
 
+**Addendum**: TO-DISCUSS during 7/7/2015 meeting - I took a look at RAML but thought the tooling was a bit terrible, and instead switched to using [Swagger][swagger] via the [Swashbuckle][swashbuckle] .NET package. There are some fundamental differences worth discussion though - mostly that RAML is intended more as an api modeling language, while swagger is more of an api describing language (e.g. raml is model first, swagger is more code-first). Swagger is much older and a more mature project at this time, with a [fancy online editor][swagger-editor] and a fairly comprehensive [server and client generator][swagger-codegen]. Swagger is also a [theoretically "planned" feature for asp.net in the future][aspnet-swagger-planned].
+
+Additional Links:
+
+- [API-Blueprint, RAML, and Swagger Comparison][slideshare-api-documentation-comparison]
+- [ASP.NET Web API Documentation using Swagger][bitoftech-swagger]
+
 Methods
 ------------
 
@@ -83,6 +91,8 @@ For invalid pages/itemsPerPage (e.g. values < 1, non-numeric, etc.), return an e
 ######**Queries**######
 We should, where appropriate, have the ability to limit the results of a **GET** with a query (in conjunction with paging), which will be handled as appropriate by the web api (e.g. via elasticsearch, database full text search, like query, etc.).
 
+######**Limited Columns**######
+We may, where appropriate (e.g. for large models), have the ability to limit the result columns of a **GET** with a comma separated list of limited columns. If not provided, return all columns.
 
 #####**POST**#####
 This roughly corresponds to **Create** in **CRUD** when the ID/url of the given resource will be determined server-side. This should **NOT** be used for updates.
@@ -234,6 +244,8 @@ If either of these assumptions are wrong or change, caching likely wouldn't be t
 [api-documentation-caching]: https://github.com/psantiago/ApiDocumentation#caching
 [apigee-api-guide]: https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf
 [apihandyman-why-prefer-rest-over-rpc]: http://apihandyman.io/do-you-really-know-why-you-prefer-rest-over-rpc/
+[aspnet-swagger-planned]: https://aspnet.uservoice.com/forums/252111-asp-net-vnext/suggestions/6156219-swagger-for-api-documentation
+[bitoftech-swagger]: http://bitoftech.net/2014/08/25/asp-net-web-api-documentation-using-swagger/
 [choosing-hypermedia-format]: http://sookocheff.com/posts/2014-03-11-on-choosing-a-hypermedia-format/
 [collection-json]: http://amundsen.com/media-types/collection/
 [cookbook-put-v-post]: http://restcookbook.com/HTTP%20Methods/put-vs-post/
@@ -276,6 +288,7 @@ If either of these assumptions are wrong or change, caching likely wouldn't be t
 [roy-okay-post]: http://roy.gbiv.com/untangled/2009/it-is-okay-to-use-post
 [sahni-best-practices]: http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
 [siren]: https://github.com/kevinswiber/siren
+[slideshare-api-documentation-comparison]: http://www.slideshare.net/SmartBear_Software/api-strat-2014metadataformatsshort
 [so-400v409v422]: http://stackoverflow.com/a/2194786/957829
 [so-400v422-2]: http://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data
 [so-400v422]: http://stackoverflow.com/questions/22358281/400-vs-422-response-to-post-that-references-an-unknown-entity
@@ -284,6 +297,10 @@ If either of these assumptions are wrong or change, caching likely wouldn't be t
 [so-versioning]: http://stackoverflow.com/questions/389169/best-practices-for-api-versioning
 [so-whats-point-of-hateoas]: http://programmers.stackexchange.com/questions/272532/whats-the-point-with-hateoas-on-the-client-side
 [such-cool]: http://www.w3.org/Provider/Style/URI.html
+[swagger]: http://swagger.io/
+[swagger-codegen]: https://github.com/swagger-api/swagger-codegen
+[swagger-editor]: http://editor.swagger.io/
+[swashbuckle]: https://github.com/domaindrivendev/Swashbuckle
 [things-caches-do]: http://2ndscale.com/rtomayko/2008/things-caches-do
 [toptal-5-golden-rules]: http://www.toptal.com/api-developers/5-golden-rules-for-designing-a-great-web-api
 [troy-hunt-versioning]: http://www.troyhunt.com/2014/02/your-api-versioning-is-wrong-which-is.html
