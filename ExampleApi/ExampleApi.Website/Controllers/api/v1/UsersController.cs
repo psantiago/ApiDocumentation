@@ -46,7 +46,7 @@ namespace ExampleApi.Website.Controllers.api.v1
 
             if (id > 10)
             {
-                return Request.CreateResponse(HttpStatusCode.NotFound, new RequestErrors(new Error("Invalid ID", "id")));
+                return Request.CreateResponse(HttpStatusCode.NotFound, new RequestErrors(new Error("No user exists with this ID", "id")));
             }
 
             return Request.CreateResponse(new User
