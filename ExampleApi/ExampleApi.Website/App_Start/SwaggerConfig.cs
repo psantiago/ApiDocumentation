@@ -45,8 +45,8 @@ namespace ExampleApi.Website
                             vc =>
                             {
                                 //NOTE: the ordering of these effects which comes first.
-                                vc.Version("v1", "Example API V1");
                                 vc.Version("v2", "Example API V2");
+                                vc.Version("v1", "Example API V1");
                             });
 
                         // You can use "BasicAuth", "ApiKey" or "OAuth2" options to describe security schemes for the API.
