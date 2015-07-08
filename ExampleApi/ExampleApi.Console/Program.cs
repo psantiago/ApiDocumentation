@@ -9,34 +9,14 @@ namespace ExampleApi.Console
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            try
-            {
-                Task.Run(async () =>
-                {
-                    // var users = await UserApi.BrokenGetAsync();
-                    // System.Console.Write(users);
-                    try
-                    {
-                        var user = await UserApi.GetAsyncHttpClient("ham");
+            MainAsync().Wait();
+        }
 
-                        System.Console.Write(user);
-                    }
-                    catch (Exception e)
-                    {
-
-                        throw;
-                    }
-
-                }).Wait();
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
-           
+        static async Task MainAsync()
+        {
+            var user = await UserApi.GetAsync("ham");
         }
     }
 }
