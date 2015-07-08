@@ -21,7 +21,11 @@ namespace ExampleApi.Client
 
         public async static Task<T> GetAsync<T>(string partialUrl)
         {
-            var response = await Client.GetAsync(partialUrl);
+            return await ProcessResponse<T>(await Client.GetAsync(partialUrl));
+        }
+
+        private async static Task<T> ProcessResponse<T>(HttpResponseMessage response)
+        {
             var body = await response.Content.ReadAsStringAsync();
             try
             {
