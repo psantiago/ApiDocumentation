@@ -5,10 +5,10 @@ using ExampleApi.Website.Models.v1;
 using Swashbuckle.Swagger.Annotations;
 using System;
 
-namespace ExampleApi.Website.Controllers.api.v1
+namespace ExampleApi.Website.Controllers.api.v2
 {
-    [Route("api/v1/users/{id?}")]
-    public class UsersV1Controller : ApiController
+    [Route("api/v2/users/{id?}")]
+    public class UsersV2Controller : ApiController
     {
         // GET: api/Users
         [SwaggerResponse(200, Type = typeof(User[]))]

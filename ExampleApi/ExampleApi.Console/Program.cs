@@ -11,11 +11,32 @@ namespace ExampleApi.Console
     {
         static void Main(string[] args)
         {
-            var usersTask = UserApi.GetAsync();
+            try
+            {
+                Task.Run(async () =>
+                {
+                    // var users = await UserApi.BrokenGetAsync();
+                    // System.Console.Write(users);
+                    try
+                    {
+                        var user = await UserApi.GetAsyncHttpClient("ham");
 
-            usersTask.Wait();
+                        System.Console.Write(user);
+                    }
+                    catch (Exception e)
+                    {
 
-            var users = usersTask.Result;
+                        throw;
+                    }
+
+                }).Wait();
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+           
         }
     }
 }
