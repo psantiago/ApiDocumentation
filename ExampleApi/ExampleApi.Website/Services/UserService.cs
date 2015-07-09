@@ -27,5 +27,20 @@ namespace ExampleApi.Website.Services
         {
             return UserRepository.Get(sessionGuid);
         }
+
+        public static User Create(User user)
+        {
+            return UserRepository.Create(user);
+        }
+        
+        public static User Update(User user)
+        {
+            return UserRepository.Update(user);
+        }
+        
+        public static void Delete(int id)
+        {
+            UserRepository.Delete(id);
+        }
     }
 }
