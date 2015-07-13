@@ -15,6 +15,8 @@ namespace ExampleApi.Website.Models.v2
     {
         Unknown = 0,
         UsersRead,
-        UsersWrite
+        UsersWrite,
+        AppsRead,
+        AppsWrite
     }
 }
