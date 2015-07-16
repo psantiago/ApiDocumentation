@@ -14,7 +14,7 @@ namespace ExampleApi.Website.Models.v2
     }
 
 
-    public class AppUsers
+    public class AppUser
     {
         [Required]
         public int AppId { get; set; }

@@ -11,7 +11,7 @@ namespace ExampleApi.Website.Models.v2
         [Required]
         public string Name { get; set; }
 
-        public List<AppUsers> Users { get; set; }
+        public List<AppUser> Users { get; set; }
 
         public HashSet<int> RelatedApps { get; set; } 
     }

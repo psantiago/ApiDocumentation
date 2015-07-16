@@ -26,7 +26,7 @@ namespace ExampleApi.Website.Controllers.api.v2
         /// <param name="page">If provided, returns only a subset of users, based on page and itemsPerPage.</param>
         /// <param name="itemsPerPage"></param>
         /// <returns></returns>
-        [SwaggerResponse(HttpStatusCode.OK, Type = typeof(User[]))]
+        [SwaggerResponse(HttpStatusCode.OK, Type = typeof(Paged<User>))]
         [SwaggerResponse(HttpStatusCode.Found, "For an out of bounds page, you will be redirected to the last available page.")]
         public HttpResponseMessage Get(int? page = null, int? itemsPerPage = 25)
         {

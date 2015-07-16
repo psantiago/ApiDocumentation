@@ -15,21 +15,21 @@ namespace ExampleApi.Website.Repositories
             {
                 Token = "readonly",
                 AppIds = new HashSet<int>(new[] { 1, 2, 3 }),
-                Permissions = new HashSet<Permission>(new[] { Permission.UsersRead })
+                Permissions = new HashSet<Permission>(new[] { Permission.UsersRead, Permission.AppsRead })
             };
 
             FakeDataStore["writeonly"] = new WebApiIdentity
             {
                 Token = "writeonly",
                 AppIds = new HashSet<int>(new[] { 1, 2, 3 }),
-                Permissions = new HashSet<Permission>(new[] { Permission.UsersWrite })
+                Permissions = new HashSet<Permission>(new[] { Permission.UsersWrite, Permission.AppsWrite })
             };
 
             FakeDataStore["admin"] = new WebApiIdentity
             {
                 Token = "admin",
                 AppIds = new HashSet<int>(new[] { 1, 2, 3 }),
-                Permissions = new HashSet<Permission>(new[] { Permission.UsersWrite, Permission.UsersRead })
+                Permissions = new HashSet<Permission>(new[] { Permission.UsersWrite, Permission.UsersRead, Permission.AppsRead, Permission.AppsWrite  })
             };
         }
 

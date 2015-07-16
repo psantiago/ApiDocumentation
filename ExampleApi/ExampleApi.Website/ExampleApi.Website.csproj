@@ -113,6 +113,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\api\v1\UsersController.cs" />
+    <Compile Include="Controllers\api\v2\AppUserController.cs" />
     <Compile Include="Controllers\api\v2\AppController.cs" />
     <Compile Include="Controllers\api\v2\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -122,8 +123,9 @@
     <Compile Include="Models\v1\User.cs" />
     <Compile Include="Models\v1\WebApiIdentity.cs" />
     <Compile Include="Models\v2\App.cs" />
-    <Compile Include="Models\v2\AppUsers.cs" />
+    <Compile Include="Models\v2\AppUser.cs" />
     <Compile Include="Models\v2\Error.cs" />
+    <Compile Include="Models\v2\Paged.cs" />
     <Compile Include="Models\v2\Patch.cs" />
     <Compile Include="Models\v2\User.cs" />
     <Compile Include="Models\v2\WebApiIdentity.cs" />
