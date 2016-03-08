@@ -318,7 +318,7 @@ Otherwise, it defaults to null, and no caching appears to happen.
 
 Additional Resources:
 
-- [Increasing Application Performance with HTTP Cache Headers](heroku-caching)
+- [Increasing Application Performance with HTTP Cache Headers][heroku-caching]
 - [Things Caches Do][things-caches-do]
 
 General API Guides/Other Resources
